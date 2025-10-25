@@ -1,0 +1,68 @@
+[
+    {
+        "timestamp": "2025-10-24T19:49:31.453017",
+        "data": {
+            "tenant_id": "13cb1f5f-3701-4541-927e-91d7cc067b89",
+            "process_id": "c1770729-95ec-4e2c-9543-e55beafd82d6",
+            "total_leads": 2,
+            "successful_count": 2,
+            "failed_count": 0,
+            "successful_leads": [
+                {
+                    "name": "Han Leo",
+                    "email": null,
+                    "phone": "2102044445",
+                    "action": "updated",
+                    "contact_id": "58Mn0CMsia6p20SqYDkR",
+                    "csv_row_number": 2
+                },
+                {
+                    "name": "Christopher Tijerina",
+                    "email": null,
+                    "phone": "2108871074",
+                    "action": "updated",
+                    "contact_id": "fgjYvjViEVUyWlfjJGkS",
+                    "csv_row_number": 3
+                }
+            ],
+            "failed_leads": [],
+            "filename": "Property Export 10%2F13%2F25+Padsplit+low+equity.csv",
+            "start_time": "2025-10-25T03:11:55.901997",
+            "end_time": "2025-10-25T03:12:14.493629",
+            "duration_seconds": 18.591632
+        }
+    },
+    {
+        "timestamp": "2025-10-24T19:50:19.695119",
+        "data": {
+            "tenant_id": "13cb1f5f-3701-4541-927e-91d7cc067b89",
+            "process_id": "c1770729-95ec-4e2c-9543-e55beafd82d6",
+            "total_leads": 2,
+            "successful_count": 2,
+            "failed_count": 0,
+            "successful_leads": [
+                {
+                    "name": "Han Leo",
+                    "email": null,
+                    "phone": "2102044445",
+                    "action": "updated",
+                    "contact_id": "58Mn0CMsia6p20SqYDkR",
+                    "csv_row_number": 2
+                },
+                {
+                    "name": "Christopher Tijerina",
+                    "email": null,
+                    "phone": "2108871074",
+                    "action": "updated",
+                    "contact_id": "fgjYvjViEVUyWlfjJGkS",
+                    "csv_row_number": 3
+                }
+            ],
+            "failed_leads": [],
+            "filename": "Property Export 10%2F13%2F25+Padsplit+low+equity.csv",
+            "start_time": "2025-10-25T03:11:55.901997",
+            "end_time": "2025-10-25T03:12:14.493629",
+            "duration_seconds": 18.591632
+        }
+    }
+]

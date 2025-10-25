@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+.env/
+
+# Poetry
+poetry.lock
+
+# Playwright
+playwright-report/
+test-results/
+.ms-playwright/
+.cache/
+trace.zip
+
+# System files
+.DS_Store
+Thumbs.db
