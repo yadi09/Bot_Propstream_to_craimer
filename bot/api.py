@@ -24,7 +24,7 @@ async def webhook(request: Request, background_tasks: BackgroundTasks):
     try:
         data = await request.json()
         logger.info(f"Webhook received at {datetime.now().isoformat()} with {len(data)} keys")
-        logger.debug(f"Full webhook data: {data}")
+        logger.info(f"Full webhook data: {data}")
 
         # Save asynchronously
         background_tasks.add_task(save_data_to_file, data)
