@@ -14,7 +14,7 @@ def read_token():
     logger.warning("Token file not found.")
     return None
 
-def add_to_marketing_list(token=None, file_name=f'{datetime.now().strftime("%Y-%m-%d")}_padsplit_low_equity.csv'):
+def add_to_marketing_list(token=None, file_name=f'{datetime.now().strftime("%Y-%m-%d")}_padsplit_low_equity'):
     headers = {
         'accept': '*/*',
         'accept-language': 'en-US,en;q=0.9',
@@ -456,7 +456,7 @@ def add_to_marketing_list(token=None, file_name=f'{datetime.now().strftime("%Y-%
 
     logger.info(f"Add to marketing list response 13 status: {response_13.status_code}")
 
-def get_marketingList_Id(token=None):
+def get_marketingList_Id(token=None, fileName=f'{datetime.now().strftime("%Y-%m-%d")}_padsplit_low_equity'):
     headers = {
         'accept': '*/*',
         'accept-language': 'en-US,en;q=0.9',
@@ -484,7 +484,7 @@ def get_marketingList_Id(token=None):
         data = response.json()
         # TodayList = data.propertyGroups.filter(listName => listName === f"{datetime.now().strftime('%m/%d/%Y')} padsplit low equity")
         # TodayList = [item for item in data.get("propertyGroups", []) if item.get("name") == f"{datetime.now().strftime('%m/%d/%Y')} padsplit low equity"]
-        TodayList = [item for item in data.get("propertyGroups", []) if item.get("name") == f"{datetime.now().strftime('%Y-%m-%d')}_padsplit_low_equity.csv"]
+        TodayList = [item for item in data.get("propertyGroups", []) if item.get("name") == fileName]
 
         if TodayList:
             ListId = TodayList[0]["id"]
@@ -515,8 +515,9 @@ def fetch_properties():
 
         # If there is no the list then create a new marketing list using add_to_marketing_list()
         logger.info("Creating a today's marketing list...")
-        add_to_marketing_list(token)
-        ListId = get_marketingList_Id(token)
+        fileName = f"{datetime.now().strftime('%Y-%m-%d')}_padsplit_low_equity"
+        add_to_marketing_list(token, fileName)
+        ListId = get_marketingList_Id(token, fileName)
 
     headers = {
         'accept': '*/*',

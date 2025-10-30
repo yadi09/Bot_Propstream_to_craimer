@@ -8,7 +8,7 @@ logger = setup_logger()
 def run_api():
     """Run FastAPI server in a separate process"""
     logger.info("Starting FastAPI API server...")
-    uvicorn.run("bot.api:app")
+    uvicorn.run("bot.api:app", host="0.0.0.0")
 
 def run_scheduler():
     """Run the background scheduler"""
