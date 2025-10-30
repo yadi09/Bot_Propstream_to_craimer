@@ -51,14 +51,6 @@ def send_to_crm(data, tenant_id):
         # 1 Generate the CSV file in-memory
         csv_file = generate_csv_from_json(data)
 
-        # You can pass only the "map_data" portion for the API
-        # map_data = {
-        #     "first_name": "MLS Agent Name",
-        #     "last_name": "MLS Agent Name",
-        #     "phone_number": "MLS Agent Phone",
-        #     "email": "MLS Agent E-Mail"
-        # }
-
         map_data = {
             "first_name": "MLS Agent Name",
             "last_name": "MLS Agent Name",
@@ -107,7 +99,6 @@ def send_to_crm(data, tenant_id):
             "Lead Status": "Lead Status"
         }
 
-        # 3️ Prepare form data for multipart upload file name format [<today's date>_padsplit_low_equity.csv]
         files = {
             "new_members_file": (f"{datetime.now().strftime('%Y-%m-%d')}_padsplit_low_equity.csv", csv_file, "text/csv")
         }

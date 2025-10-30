@@ -482,8 +482,7 @@ def get_marketingList_Id(token=None, fileName=f'{datetime.now().strftime("%Y-%m-
     if response.status_code == 200:
         logger.info("Successfully fetched All marketing lists.")
         data = response.json()
-        # TodayList = data.propertyGroups.filter(listName => listName === f"{datetime.now().strftime('%m/%d/%Y')} padsplit low equity")
-        # TodayList = [item for item in data.get("propertyGroups", []) if item.get("name") == f"{datetime.now().strftime('%m/%d/%Y')} padsplit low equity"]
+
         TodayList = [item for item in data.get("propertyGroups", []) if item.get("name") == fileName]
 
         if TodayList:
@@ -502,13 +501,13 @@ def get_marketingList_Id(token=None, fileName=f'{datetime.now().strftime("%Y-%m-
         return None
 
 def fetch_properties():
-    # Find the Marketing list [<today's date>_padsplit_low_equity] to extract the Id
     get_token()
     token = read_token()
     if not token:
         logger.error("❌ Missing token. Run token_manager.get_token() first.")
         # Send a information to the admin about missing token. using webhook.
 
+    # Find the Marketing list [<today's date>_padsplit_low_equity] to extract the Id
     ListId = get_marketingList_Id(token)
     if not ListId:
         logger.error("❌ Could not retrieve marketing list ID.")

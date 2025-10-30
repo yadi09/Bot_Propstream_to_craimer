@@ -19,11 +19,6 @@ def job():
     if data:
         logger.info(f"Fetched {len(data.get('properties', []))} properties.")
         send_to_crm(data, tenant_id="1d8086e9-eb18-40f5-b2de-9075fdf236b9")
-        # add to file for testing
-        # with open("data/all_data/properties_data.json", "w") as f:
-        #     json.dump(data, f, indent=4)
-        # logger.info("Data written to data/all_data/properties_data.json")
-        # return data
 
 def start_scheduler():
     # schedule.every(1).minutes.do(job)
