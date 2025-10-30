@@ -1,9 +1,8 @@
 from playwright.sync_api import sync_playwright
-import time
 from bot.config import LOGIN_URL, USERNAME, PASSWORD, HEADLESS, TOKEN_FILE
 from bot.logger import setup_logger
 
-logger = setup_logger("token_manager")
+logger = setup_logger()
 
 def get_token():
     logger.info("Launching browser to retrieve PropStream token...")

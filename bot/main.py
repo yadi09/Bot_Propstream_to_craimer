@@ -3,12 +3,12 @@ import uvicorn
 from bot.scheduler import start_scheduler
 from bot.logger import setup_logger
 
-logger = setup_logger("main")
+logger = setup_logger()
 
 def run_api():
     """Run FastAPI server in a separate process"""
     logger.info("Starting FastAPI API server...")
-    uvicorn.run("bot.api:app", host="0.0.0.0", port=8000, reload=False)
+    uvicorn.run("bot.api:app")
 
 def run_scheduler():
     """Run the background scheduler"""
