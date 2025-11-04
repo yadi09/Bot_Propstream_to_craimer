@@ -18,12 +18,15 @@ def job():
         return
     if data:
         logger.info(f"Fetched {len(data.get('properties', []))} properties.")
-        send_to_crm(data, tenant_id="1d8086e9-eb18-40f5-b2de-9075fdf236b9")
+        # send_to_crm(data, tenant_id="1d8086e9-eb18-40f5-b2de-9075fdf236b9") # To GHL Sandbox
+        send_to_crm(data, tenant_id="1d8086e9-eb18-40f5-b2de-9075fdf236b9") # To palm capital
+
 
 def start_scheduler():
-    # schedule.every(1).minutes.do(job)
-    schedule.every().sunday.at("10:00").do(job)
-    logger.info(f"Scheduler started [runs every Sunday at 10:00].")
+    # schedule every day do the job
+    schedule.every().day.at("10:00").do(job)
+    # schedule.every().sunday.at("10:00").do(job)
+    logger.info(f"Scheduler started [runs every day at 10:00].")
     job()  # Run immediately once
     while True:
         schedule.run_pending()

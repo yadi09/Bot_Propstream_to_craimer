@@ -9,7 +9,9 @@ import csv
 logger = setup_logger()
 
 USERNAME = "bot_user"
-TAGS = ["propstream"]
+current_datetime = datetime.now()
+date_tag = f"{current_datetime.strftime('%m/%d/%y')}"
+TAGS = ["Craimer_bot", date_tag, "padsplit"]
 
 def generate_csv_from_json(data):
     """
