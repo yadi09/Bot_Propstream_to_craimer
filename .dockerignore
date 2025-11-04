@@ -8,3 +8,6 @@ __pycache__
 dist
 build
 token.txt
+z_test.json
+z_important_logs.txt
+test.py
