@@ -7,9 +7,6 @@ __pycache__/
 .venv/
 .env
 
-# Poetry
-poetry.lock
-
 # Playwright
 playwright-report/
 test-results/
