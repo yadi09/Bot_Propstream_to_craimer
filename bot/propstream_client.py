@@ -351,110 +351,205 @@ def add_to_marketing_list(token=None, file_name=f'{datetime.now().strftime("%Y-%
         'selectionInversed': True,
     }
 
-    response_1 = requests.post(
+    json_data_14 = {
+        'estimatedEquityPercentMax': 0.2,
+        'hoaPresent': False,
+        'mlsListingStatus': 'ACTIVE,COMING_SOON',
+        'rental': False,
+        'mortgageTotalPaymentMax': 2000,
+        'cityId': 61968,
+        'squareFeetMin': 1500,
+        'landUseCode': 'SFR',
+        'mlsListingAmountMin': 60000,
+        'bathroomsMin': 2,
+        'propertyClassCode': 'R',
+        'resultOffset': 1,
+        'mlsListingDateMin': 1755043200000,
+        'residentialPropCode': 'SFR',
+        'type': None,
+        'bedroomsMin': 3,
+        'mlsListingAmountMax': 499000,
+        'estimatedValueGrowthPeriod': 'ONE_MONTH',
+        # 'resultLimit': 9,
+        'selection': [],
+        'selectionInversed': True,
+    }
+
+    json_data_15 = {
+        'estimatedEquityPercentMax': 0.2,
+        'hoaPresent': False,
+        'mlsListingStatus': 'ACTIVE,COMING_SOON',
+        'rental': False,
+        'mortgageTotalPaymentMax': 2000,
+        'cityId': 96373,
+        'squareFeetMin': 1500,
+        'landUseCode': 'SFR',
+        'mlsListingAmountMin': 60000,
+        'bathroomsMin': 2,
+        'propertyClassCode': 'R',
+        'resultOffset': 1,
+        'mlsListingDateMin': 1755043200000,
+        'residentialPropCode': 'SFR',
+        'type': None,
+        'bedroomsMin': 3,
+        'mlsListingAmountMax': 499000,
+        'estimatedValueGrowthPeriod': 'ONE_MONTH',
+        # 'resultLimit': 25,
+        'selection': [],
+        'selectionInversed': True,
+    }
+
+    json_data_16 = {
+        'estimatedEquityPercentMax': 0.2,
+        'hoaPresent': False,
+        'mlsListingStatus': 'ACTIVE,COMING_SOON',
+        'rental': False,
+        'mortgageTotalPaymentMax': 2000,
+        'cityId': 61704,
+        'squareFeetMin': 1500,
+        'landUseCode': 'SFR',
+        'mlsListingAmountMin': 60000,
+        'bathroomsMin': 2,
+        'propertyClassCode': 'R',
+        'resultOffset': 1,
+        'mlsListingDateMin': 1755043200000,
+        'residentialPropCode': 'SFR',
+        'type': None,
+        'bedroomsMin': 3,
+        'mlsListingAmountMax': 499000,
+        'estimatedValueGrowthPeriod': 'ONE_MONTH',
+        # 'resultLimit': 22,
+        'selection': [],
+        'selectionInversed': True,
+    }
+
+    # response_1 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_1,
+    # )
+    # logger.info(f"Add to marketing list response 1 status: {response_1.status_code}")
+    
+    # response_2 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_2,
+    # )
+    # logger.info(f"Add to marketing list response 2 status: {response_2.status_code}")
+    
+    # response_3 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_3,
+    # )
+    # logger.info(f"Add to marketing list response 3 status: {response_3.status_code}")
+    
+    # response_4 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_4,
+    # )
+    # logger.info(f"Add to marketing list response 4 status: {response_4.status_code}")
+    
+    # response_5 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_5,
+    # )
+    # logger.info(f"Add to marketing list response 5 status: {response_5.status_code}")
+    
+    # response_6 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_6,
+    # )
+    # logger.info(f"Add to marketing list response 6 status: {response_6.status_code}")
+    
+    # response_7 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_7,
+    # )
+    # logger.info(f"Add to marketing list response 7 status: {response_7.status_code}")
+    
+    # response_8 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_8,
+    # )
+    # logger.info(f"Add to marketing list response 8 status: {response_8.status_code}")
+    
+    # response_9 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_9,
+    # )
+    # logger.info(f"Add to marketing list response 9 status: {response_9.status_code}")
+    
+    # response_10 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_10,
+    # )
+    # logger.info(f"Add to marketing list response 10 status: {response_10.status_code}")
+    
+    # response_11 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_11,
+    # )
+    # logger.info(f"Add to marketing list response 11 status: {response_11.status_code}")
+    
+    # response_12 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_12,
+    # )
+    # logger.info(f"Add to marketing list response 12 status: {response_12.status_code}")
+    
+    # response_13 = requests.post(
+    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+    #     params=params,
+    #     headers=headers,
+    #     json=json_data_13,
+    # )
+    # logger.info(f"Add to marketing list response 13 status: {response_13.status_code}")
+
+    response_14 = requests.post(
         'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
         params=params,
         headers=headers,
-        json=json_data_1,
+        json=json_data_14,
     )
+    logger.info(f"Add to marketing list response 14 status: {response_14.status_code}")
 
-    logger.info(f"Add to marketing list response 1 status: {response_1.status_code}")
-    response_2 = requests.post(
+    response_15 = requests.post(
         'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
         params=params,
         headers=headers,
-        json=json_data_2,
+        json=json_data_15,
     )
+    logger.info(f"Add to marketing list response 15 status: {response_15.status_code}")
 
-    logger.info(f"Add to marketing list response 2 status: {response_2.status_code}")
-    response_3 = requests.post(
+    response_16 = requests.post(
         'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
         params=params,
         headers=headers,
-        json=json_data_3,
+        json=json_data_16,
     )
-
-    logger.info(f"Add to marketing list response 3 status: {response_3.status_code}")
-    response_4 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_4,
-    )
-
-    logger.info(f"Add to marketing list response 4 status: {response_4.status_code}")
-    response_5 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_5,
-    )
-
-    logger.info(f"Add to marketing list response 5 status: {response_5.status_code}")
-    response_6 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_6,
-    )
-
-    logger.info(f"Add to marketing list response 6 status: {response_6.status_code}")
-    response_7 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_7,
-    )
-
-    logger.info(f"Add to marketing list response 7 status: {response_7.status_code}")
-    response_8 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_8,
-    )
-
-    logger.info(f"Add to marketing list response 8 status: {response_8.status_code}")
-    response_9 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_9,
-    )
-
-    logger.info(f"Add to marketing list response 9 status: {response_9.status_code}")
-    response_10 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_10,
-    )
-
-    logger.info(f"Add to marketing list response 10 status: {response_10.status_code}")
-    response_11 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_11,
-    )
-
-    logger.info(f"Add to marketing list response 11 status: {response_11.status_code}")
-    response_12 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_12,
-    )
-
-    logger.info(f"Add to marketing list response 12 status: {response_12.status_code}")
-    response_13 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_13,
-    )
-
-    logger.info(f"Add to marketing list response 13 status: {response_13.status_code}")
+    logger.info(f"Add to marketing list response 16 status: {response_16.status_code}")
 
 def get_marketingList_Id(token=None, fileName=f'{datetime.now().strftime("%Y-%m-%d")}_padsplit_low_equity'):
     headers = {
