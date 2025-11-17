@@ -24,10 +24,10 @@ scheduler_process = multiprocessing.Process(target=run_scheduler)
 
 # Start both
 api_process.start()
-# scheduler_process.start()
+scheduler_process.start()
 
 logger.info("✅ Both API and Scheduler started successfully.")
 
 # Wait for both processes to finish (block main thread)
 api_process.join()
-# scheduler_process.join()
+scheduler_process.join()
