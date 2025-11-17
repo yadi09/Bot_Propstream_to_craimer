@@ -41,7 +41,7 @@ def get_filter_data(address_id: str) -> dict:
     # Further steps to get filter data and comps would go here
     logger.info(f"Starting process to get filter data for property ID: {address_id}")
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=100)
+        browser = p.chromium.launch(headless=HEADLESS, slow_mo=100)
         context = browser.new_context()
         page = context.new_page()
 
