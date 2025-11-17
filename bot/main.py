@@ -15,19 +15,19 @@ def run_scheduler():
     logger.info("Starting scheduler service...")
     start_scheduler()
 
-if __name__ == "__main__":
-    logger.info("🚀 Starting PropStream Automation (API + Scheduler)...")
+# if __name__ == "__main__":
+logger.info("🚀 Starting PropStream Automation (API + Scheduler)...")
 
-    # Create two separate processes
-    api_process = multiprocessing.Process(target=run_api)
-    scheduler_process = multiprocessing.Process(target=run_scheduler)
+# Create two separate processes
+api_process = multiprocessing.Process(target=run_api)
+scheduler_process = multiprocessing.Process(target=run_scheduler)
 
-    # Start both
-    api_process.start()
-    scheduler_process.start()
+# Start both
+api_process.start()
+# scheduler_process.start()
 
-    logger.info("✅ Both API and Scheduler started successfully.")
+logger.info("✅ Both API and Scheduler started successfully.")
 
-    # Wait for both processes to finish (block main thread)
-    api_process.join()
-    scheduler_process.join()
+# Wait for both processes to finish (block main thread)
+api_process.join()
+# scheduler_process.join()

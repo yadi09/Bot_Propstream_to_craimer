@@ -18,7 +18,7 @@ def job():
         return
     if data:
         logger.info(f"Fetched {len(data.get('properties', []))} properties.")
-        send_to_crm(data, tenant_id="1d8086e9-eb18-40f5-b2de-9075fdf236b9")
+        # send_to_crm(data, tenant_id="1d8086e9-eb18-40f5-b2de-9075fdf236b9")
 
 
 def start_scheduler():
