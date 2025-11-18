@@ -423,6 +423,30 @@ def add_to_marketing_list(token=None, file_name=f'{datetime.now().strftime("%Y-%
         'selectionInversed': True,
     }
 
+    json_data_17 = {
+        'estimatedEquityPercentMax': 0.2,
+        'hoaPresent': False,
+        'mlsListingStatus': 'ACTIVE,COMING_SOON',
+        'rental': False,
+        'mortgageTotalPaymentMax': 2000,
+        'cityId': 61704,
+        'squareFeetMin': 1200,
+        'landUseCode': 'SFR',
+        'mlsListingAmountMin': 60000,
+        'bathroomsMin': 2,
+        'propertyClassCode': 'R',
+        'resultOffset': 1,
+        'mlsListingDateMin': 1755043200000,
+        'residentialPropCode': 'SFR',
+        'type': None,
+        'bedroomsMin': 3,
+        'mlsListingAmountMax': 499000,
+        'estimatedValueGrowthPeriod': 'ONE_MONTH',
+        'resultLimit': 23,
+        'selection': [],
+        'selectionInversed': True,
+    }
+
     # response_1 = requests.post(
     #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
     #     params=params,
@@ -550,6 +574,14 @@ def add_to_marketing_list(token=None, file_name=f'{datetime.now().strftime("%Y-%
         json=json_data_16,
     )
     logger.info(f"Add to marketing list response 16 status: {response_16.status_code}")
+
+    response_17 = requests.post(
+        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+        params=params,
+        headers=headers,
+        json=json_data_17,
+    )
+    logger.info(f"Add to marketing list response 17 status: {response_17.status_code}")
 
 def get_marketingList_Id(token=None, fileName=f'{datetime.now().strftime("%Y-%m-%d")}_padsplit_low_equity'):
     headers = {
