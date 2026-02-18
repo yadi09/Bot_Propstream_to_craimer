@@ -1,20 +1,20 @@
 import os
-import requests
 from datetime import datetime
-from bot.config import TOKEN_FILE
+import requests
+from bot.config import TOKEN_FILE, LOGIN_URL, USERNAME, PASSWORD, HEADLESS
 from bot.logger import setup_logger
 from bot.token_manager import get_token
 
 logger = setup_logger()
 
-def read_token():
-    if os.path.exists(TOKEN_FILE):
-        with open(TOKEN_FILE) as f:
+def read_token(token_file=TOKEN_FILE):
+    if os.path.exists(token_file):
+        with open(token_file) as f:
             return f.read().strip()
     logger.warning("Token file not found.")
     return None
 
-def add_to_marketing_list(token=None, file_name=f'{datetime.now().strftime("%Y-%m-%d")}_padsplit_low_equity'):
+def add_to_marketing_list(filters, token=None, file_name=f'{datetime.now().strftime("%Y-%m-%d")}_padsplit_low_equity'):
     headers = {
         'accept': '*/*',
         'accept-language': 'en-US,en;q=0.9',
@@ -39,551 +39,23 @@ def add_to_marketing_list(token=None, file_name=f'{datetime.now().strftime("%Y-%
         'groupName': file_name,
     }
 
-    json_data_1 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 42455,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'daysOnMarketMax': 300,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        # 'resultLimit': 13,
-        'selection': [],
-        'selectionInversed': True,
-    }
+    if not filters:
+        logger.warning("No filters provided for marketing list creation.")
+        return
 
-    json_data_2 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 42455,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'mlsListingDateMin': 1757462400000,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        # 'resultLimit': 6,
-        'selection': [],
-        'selectionInversed': True,
-    }
+    for index, item in enumerate(filters, start=1):
+        payload = item.get("payload", item)
+        response = requests.post(
+            'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
+            params=params,
+            headers=headers,
+            json=payload,
+        )
+        logger.info(f"Add to marketing list response {index} status: {response.status_code}")
 
-    json_data_3 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'countyId': 2378,
-        'mortgageTotalPaymentMax': 2000,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'mlsListingDateMin': 1757462400000,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        # 'resultLimit': 11,
-        'selection': [],
-        'selectionInversed': True,
-    }
 
-    json_data_4 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 162245,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'daysOnMarketMax': 300,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 19,
-        'selection': [],
-        'selectionInversed': True,
-    }
 
-    json_data_5 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 168748,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'daysOnMarketMax': 300,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 6,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_6 = {
-        'estimatedEquityPercentMax': 0.3,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 162654,
-        'squareFeetMin': 2400,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'mlsListingDateMin': 1735776000000,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 8,
-        'mortgageInterestRateMax': 0.05,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_7 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 1900,
-        'cityId': 164049,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'mlsListingDateMin': 1757462400000,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 12,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_8 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 164049,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'daysOnMarketMax': 300,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 40,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_9 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 96373,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'daysOnMarketMax': 300,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 24,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_10 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 102609,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'daysOnMarketMax': 300,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 6,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_11 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'countyId': 155,
-        'mortgageTotalPaymentMax': 2500,
-        'squareFeetMin': 1200,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 200000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'daysOnMarketMax': 300,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 600000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 95,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_12 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 69603,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'daysOnMarketMax': 300,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 9,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_13 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 160901,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'daysOnMarketMax': 300,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 49,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_14 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 61968,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'mlsListingDateMin': 1755043200000,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        # 'resultLimit': 9,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_15 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 96373,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'mlsListingDateMin': 1755043200000,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        # 'resultLimit': 25,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_16 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 61704,
-        'squareFeetMin': 1500,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'mlsListingDateMin': 1755043200000,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        # 'resultLimit': 22,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    json_data_17 = {
-        'estimatedEquityPercentMax': 0.2,
-        'hoaPresent': False,
-        'mlsListingStatus': 'ACTIVE,COMING_SOON',
-        'rental': False,
-        'mortgageTotalPaymentMax': 2000,
-        'cityId': 61704,
-        'squareFeetMin': 1200,
-        'landUseCode': 'SFR',
-        'mlsListingAmountMin': 60000,
-        'bathroomsMin': 2,
-        'propertyClassCode': 'R',
-        'resultOffset': 1,
-        'mlsListingDateMin': 1755043200000,
-        'residentialPropCode': 'SFR',
-        'type': None,
-        'bedroomsMin': 3,
-        'mlsListingAmountMax': 499000,
-        'estimatedValueGrowthPeriod': 'ONE_MONTH',
-        'resultLimit': 23,
-        'selection': [],
-        'selectionInversed': True,
-    }
-
-    # response_1 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_1,
-    # )
-    # logger.info(f"Add to marketing list response 1 status: {response_1.status_code}")
-    
-    # response_2 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_2,
-    # )
-    # logger.info(f"Add to marketing list response 2 status: {response_2.status_code}")
-    
-    # response_3 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_3,
-    # )
-    # logger.info(f"Add to marketing list response 3 status: {response_3.status_code}")
-    
-    # response_4 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_4,
-    # )
-    # logger.info(f"Add to marketing list response 4 status: {response_4.status_code}")
-    
-    # response_5 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_5,
-    # )
-    # logger.info(f"Add to marketing list response 5 status: {response_5.status_code}")
-    
-    # response_6 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_6,
-    # )
-    # logger.info(f"Add to marketing list response 6 status: {response_6.status_code}")
-    
-    # response_7 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_7,
-    # )
-    # logger.info(f"Add to marketing list response 7 status: {response_7.status_code}")
-    
-    # response_8 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_8,
-    # )
-    # logger.info(f"Add to marketing list response 8 status: {response_8.status_code}")
-    
-    # response_9 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_9,
-    # )
-    # logger.info(f"Add to marketing list response 9 status: {response_9.status_code}")
-    
-    # response_10 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_10,
-    # )
-    # logger.info(f"Add to marketing list response 10 status: {response_10.status_code}")
-    
-    # response_11 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_11,
-    # )
-    # logger.info(f"Add to marketing list response 11 status: {response_11.status_code}")
-    
-    # response_12 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_12,
-    # )
-    # logger.info(f"Add to marketing list response 12 status: {response_12.status_code}")
-    
-    # response_13 = requests.post(
-    #     'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-    #     params=params,
-    #     headers=headers,
-    #     json=json_data_13,
-    # )
-    # logger.info(f"Add to marketing list response 13 status: {response_13.status_code}")
-
-    response_14 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_14,
-    )
-    logger.info(f"Add to marketing list response 14 status: {response_14.status_code}")
-
-    response_15 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_15,
-    )
-    logger.info(f"Add to marketing list response 15 status: {response_15.status_code}")
-
-    response_16 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_16,
-    )
-    logger.info(f"Add to marketing list response 16 status: {response_16.status_code}")
-
-    response_17 = requests.post(
-        'https://app.propstream.com/eqbackend/resource/auth/ps4/user/listings',
-        params=params,
-        headers=headers,
-        json=json_data_17,
-    )
-    logger.info(f"Add to marketing list response 17 status: {response_17.status_code}")
-
-def get_marketingList_Id(token=None, fileName=f'{datetime.now().strftime("%Y-%m-%d")}_padsplit_low_equity'):
+def get_marketingList_Id(token=None, token_file=TOKEN_FILE, fileName=f'{datetime.now().strftime("%Y-%m-%d")}_padsplit_low_equity'):
     headers = {
         'accept': '*/*',
         'accept-language': 'en-US,en;q=0.9',
@@ -598,7 +70,7 @@ def get_marketingList_Id(token=None, fileName=f'{datetime.now().strftime("%Y-%m-
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
-        'x-auth-token': token if token else read_token(),
+        'x-auth-token': token if token else read_token(token_file),
     }
 
     response = requests.get(
@@ -627,23 +99,40 @@ def get_marketingList_Id(token=None, fileName=f'{datetime.now().strftime("%Y-%m-
         logger.error(f"Error fetching marketing list ID ({response.status_code}): {response.text}")
         return None
 
-def fetch_properties():
-    get_token()
-    token = read_token()
+def fetch_properties(tenant):
+    propstream = tenant.get("propstream", {})
+    login_url = propstream.get("login_url", LOGIN_URL)
+    username = propstream.get("username", USERNAME)
+    password = propstream.get("password", PASSWORD)
+    headless = propstream.get("headless", HEADLESS)
+    token_file = propstream.get("token_file", TOKEN_FILE)
+    filters = propstream.get("filters", [])
+    list_prefix = propstream.get("list_name_prefix", "padsplit_low_equity")
+
+    if not username or not password:
+        logger.error("Missing PropStream credentials for tenant.")
+        return None
+
+    get_token(login_url=login_url, username=username, password=password, headless=headless, token_file=token_file)
+    token = read_token(token_file)
     if not token:
         logger.error("❌ Missing token. Run token_manager.get_token() first.")
         # Send a information to the admin about missing token. using webhook.
+        return None
 
     # Find the Marketing list [<today's date>_padsplit_low_equity] to extract the Id
-    ListId = get_marketingList_Id(token)
+    file_name = f"{datetime.now().strftime('%Y-%m-%d')}_{list_prefix}"
+    ListId = get_marketingList_Id(token=token, token_file=token_file, fileName=file_name)
     if not ListId:
         logger.error("❌ Could not retrieve marketing list ID.")
 
         # If there is no the list then create a new marketing list using add_to_marketing_list()
         logger.info("Creating a today's marketing list...")
-        fileName = f"{datetime.now().strftime('%Y-%m-%d')}_padsplit_low_equity"
-        add_to_marketing_list(token, fileName)
-        ListId = get_marketingList_Id(token, fileName)
+        add_to_marketing_list(filters=filters, token=token, file_name=file_name)
+        ListId = get_marketingList_Id(token=token, token_file=token_file, fileName=file_name)
+        if not ListId:
+            logger.error("❌ Marketing list ID still missing after creation attempt.")
+            return None
 
     headers = {
         'accept': '*/*',
@@ -661,7 +150,7 @@ def fetch_properties():
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
-        'x-auth-token': token if token else read_token(),
+        'x-auth-token': token if token else read_token(token_file),
     }
 
     params = {
@@ -1176,7 +665,6 @@ def fetch_properties():
         'startRow': 0,
         'endRow': 500,
     }
-
 
     logger.info("Fetching property data from PropStream API...")
     try:

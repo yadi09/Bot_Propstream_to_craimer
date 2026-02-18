@@ -1,14 +1,21 @@
+import os
+import time
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 from bot.config import LOGIN_URL, USERNAME, PASSWORD, HEADLESS, TOKEN_FILE
 from bot.logger import setup_logger
-import time
 
 logger = setup_logger()
 
 MAX_RETRIES = 5       # Number of times to retry the whole process
 RETRY_DELAY = 5      # Delay in seconds between retries
 
-def get_token():
+def get_token(
+    login_url=LOGIN_URL,
+    username=USERNAME,
+    password=PASSWORD,
+    headless=HEADLESS,
+    token_file=TOKEN_FILE,
+):
     for attempt in range(1, MAX_RETRIES + 1):
         logger.info(f"Attempt {attempt}/{MAX_RETRIES} to retrieve PropStream token...")
         token = None
@@ -16,7 +23,7 @@ def get_token():
         try:
             with sync_playwright() as p:
                 try:
-                    browser = p.chromium.launch(headless=HEADLESS, slow_mo=100)
+                    browser = p.chromium.launch(headless=headless, slow_mo=100)
                     context = browser.new_context()
                     page = context.new_page()
 
@@ -33,11 +40,11 @@ def get_token():
                     page.on("response", on_response)
 
                     logger.info("Navigating to login page...")
-                    page.goto(LOGIN_URL, wait_until="domcontentloaded", timeout=60000)
+                    page.goto(login_url, wait_until="domcontentloaded", timeout=60000)
 
                     logger.info("Filling login form...")
-                    page.fill('input[type="text"], input[name="username"], input[type="email"]', USERNAME)
-                    page.fill('input[type="password"]', PASSWORD)
+                    page.fill('input[type="text"], input[name="username"], input[type="email"]', username)
+                    page.fill('input[type="password"]', password)
                     page.keyboard.press("Enter")
 
                     logger.info("Waiting for login to complete...")
@@ -69,9 +76,12 @@ def get_token():
 
         if token:
             try:
-                with open(TOKEN_FILE, "w") as f:
+                token_dir = os.path.dirname(token_file)
+                if token_dir:
+                    os.makedirs(token_dir, exist_ok=True)
+                with open(token_file, "w") as f:
                     f.write(token)
-                logger.info(f"Token saved to {TOKEN_FILE}")
+                logger.info(f"Token saved to {token_file}")
             except Exception as e:
                 logger.error(f"❌ Failed to write token file: {e}")
             return token

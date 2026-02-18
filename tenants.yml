@@ -1,0 +1,190 @@
+tenants:
+  - id: "1d8086e9-eb18-40f5-b2de-9075fdf236b9"
+    name: "Palm Capital"
+    enabled: true
+    propstream:
+      login_url: "https://login.propstream.com/"
+      username: "${PALM_PS_USER}"
+      password: "${PALM_PS_PASS}"
+      headless: true
+      list_name_prefix: "padsplit_low_equity"
+      token_file: ".tokens/palm_capital.txt"
+      filters:
+        - name: "Filter_A_SanAntonio"
+          payload:
+            estimatedEquityPercentMax: 0.2
+            hoaPresent: false
+            mlsListingStatus: "ACTIVE,COMING_SOON"
+            rental: false
+            mortgageTotalPaymentMax: 2000
+            cityId: 42455
+            squareFeetMin: 1501
+            landUseCode: "SFR"
+            mlsListingAmountMin: 50000
+            bathroomsMin: 2
+            propertyClassCode: "R"
+            resultOffset: 1
+            daysOnMarketMax: 300
+            residentialPropCode: "SFR"
+            bedroomsMin: 3
+            mlsListingAmountMax: 499000
+            estimatedValueGrowthPeriod: "ONE_MONTH"
+            selection: []
+            selectionInversed: true
+        - name: "Filter_B_Chicago"
+          payload:
+            estimatedEquityPercentMax: 0.2
+            hoaPresent: false
+            mlsListingStatus: "ACTIVE,COMING_SOON"
+            rental: false
+            mortgageTotalPaymentMax: 2000
+            cityId: 164049
+            squareFeetMin: 1501
+            landUseCode: "SFR"
+            mlsListingAmountMin: 50000
+            bathroomsMin: 2
+            propertyClassCode: "R"
+            resultOffset: 1
+            daysOnMarketMax: 300
+            residentialPropCode: "SFR"
+            bedroomsMin: 3
+            mlsListingAmountMax: 499000
+            estimatedValueGrowthPeriod: "ONE_MONTH"
+            resultLimit: 40
+            selection: []
+            selectionInversed: true
+    crm:
+      webhook_url: "https://sms-api.craimer.com/api/v2/ghl/create_contact"
+      inbound_webhook_url: "https://services.leadconnectorhq.com/hooks/S9g9sAgRoWUU9jp0M5Bi/webhook-trigger/bb05c8f7-6b1f-4764-833d-843e927f9f32"
+      username: "bot_user"
+      tags: ["Craimer_bot", "padsplit", "PalmCapital"]
+      mapping:
+        first_name: "MLS Agent Name"
+        last_name: "MLS Agent Name"
+        phone_number: "MLS Agent Phone"
+        email: "MLS Agent E-Mail"
+        Property Address: "Address"
+        Property City: "City"
+        Property State: "State"
+        Property Zip: "Zip"
+        APN: "APN"
+        Owner 1 First Name: "Owner 1 First Name"
+        Owner 1 Last Name: "Owner 1 Last Name"
+        Mailing Address: "Mailing Address"
+        Bedrooms: "Bedrooms"
+        Bathrooms: "Bathrooms"
+        Year Built: "Year Built"
+        Value: "Est. Value"
+        MLS Amount: "MLS Amount"
+        MLS Agent Name: "MLS Agent Name"
+        MLS Agent Phone: "MLS Agent Phone"
+
+  - id: "3f2c3a21-22d9-4c2a-ae06-9c5f7f0ad8a1"
+    name: "Clear Sky Builder"
+    enabled: true
+    propstream:
+      login_url: "https://login.propstream.com/"
+      username: "${CLEAR_PS_USER}"
+      password: "${CLEAR_PS_PASS}"
+      headless: true
+      list_name_prefix: "csb_equity"
+      token_file: ".tokens/clear_sky_builder.txt"
+      filters:
+        - name: "Filter_KS"
+          payload:
+            estimatedEquityPercentMax: 0.3
+            hoaPresent: false
+            mlsListingStatus: "ACTIVE,COMING_SOON"
+            rental: false
+            mortgageTotalPaymentMax: 2000
+            cityId: 61769
+            fips: "20177"
+            squareFeetMin: 1200
+            landUseCode: "SFR"
+            mlsListingAmountMin: 60000
+            bathroomsMin: 1
+            propertyClassCode: "R"
+            resultOffset: 1
+            mlsListingDateMin: 1755043200000
+            residentialPropCode: "SFR"
+            bedroomsMin: 3
+            mlsListingAmountMax: 499000
+            estimatedValueGrowthPeriod: "ONE_MONTH"
+            resultLimit: 5
+            selection: []
+            selectionInversed: true
+    crm:
+      webhook_url: "https://sms-api.craimer.com/api/v2/ghl/create_contact"
+      inbound_webhook_url: "https://services.leadconnectorhq.com/hooks/S9g9sAgRoWUU9jp0M5Bi/webhook-trigger/bb05c8f7-6b1f-4764-833d-843e927f9f32"
+      username: "bot_user"
+      tags: ["Craimer_bot", "ClearSky", "csb_equity"]
+      mapping:
+        first_name: "MLS Agent Name"
+        last_name: "MLS Agent Name"
+        phone_number: "MLS Agent Phone"
+        email: "MLS Agent E-Mail"
+        Property Address: "Address"
+        Property City: "City"
+        Property State: "State"
+        Property Zip: "Zip"
+        APN: "APN"
+        Property Type: "Property Type"
+        Bedrooms: "Bedrooms"
+        Bathrooms: "Total Bathrooms"
+        Building Sqft: "Building Sqft"
+        Lot Size Sqft: "Lot Size Sqft"
+        Year Built: "Year Built"
+        Is there an HOA?: "HOA Present"
+
+  - id: "7d2f9e01-1a5b-48c1-b4f8-33c0bb0a9f2a"
+    name: "Regional Investor"
+    enabled: true
+    propstream:
+      login_url: "https://login.propstream.com/"
+      username: "${REG_PS_USER}"
+      password: "${REG_PS_PASS}"
+      headless: true
+      list_name_prefix: "regional_low_equity"
+      token_file: ".tokens/regional_investor.txt"
+      filters:
+        - name: "Filter_Oklahoma"
+          payload:
+            estimatedEquityPercentMax: 0.3
+            hoaPresent: false
+            mlsListingStatus: "ACTIVE,COMING_SOON"
+            rental: false
+            mortgageTotalPaymentMax: 2000
+            cityId: 134037
+            fips: "40143"
+            squareFeetMin: 1200
+            landUseCode: "SFR"
+            mlsListingAmountMin: 60000
+            bathroomsMin: 1
+            propertyClassCode: "R"
+            resultOffset: 1
+            mlsListingDateMin: 1755043200000
+            residentialPropCode: "SFR"
+            bedroomsMin: 3
+            mlsListingAmountMax: 499000
+            estimatedValueGrowthPeriod: "ONE_MONTH"
+            resultLimit: 24
+            selection: []
+            selectionInversed: true
+    crm:
+      webhook_url: "https://sms-api.craimer.com/api/v2/ghl/create_contact"
+      inbound_webhook_url: "https://services.leadconnectorhq.com/hooks/S9g9sAgRoWUU9jp0M5Bi/webhook-trigger/bb05c8f7-6b1f-4764-833d-843e927f9f32"
+      username: "bot_user"
+      tags: ["Craimer_bot", "RegionalInvestor", "low_equity"]
+      mapping:
+        first_name: "MLS Agent Name"
+        last_name: "MLS Agent Name"
+        phone_number: "MLS Agent Phone"
+        email: "MLS Agent E-Mail"
+        Property Address: "Address"
+        Property City: "City"
+        Property State: "State"
+        Property Zip: "Zip"
+        MLS Amount: "MLS Amount"
+        MLS Agent Name: "MLS Agent Name"
+        MLS Brokerage Name: "MLS Brokerage Name"
+        Lead Status: "Lead Status"

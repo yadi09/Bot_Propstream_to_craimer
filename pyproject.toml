@@ -1,7 +1,7 @@
 [project]
 name = "propstream-bot"
 version = "0.1.0"
-description = "PropStream automation bot with API + scheduler"
+description = "PropStream automation bot with API + cron"
 authors = [
     {name = "Yadamzer",email = "yadamzerterefe09@gmail.com"}
 ]
@@ -11,11 +11,11 @@ requires-python = ">=3.12"
 dependencies = [
     "playwright (>=1.55.0,<2.0.0)",
     "requests (>=2.32.5,<3.0.0)",
-    "schedule (>=1.2.2,<2.0.0)",
     "python-dotenv (>=1.1.1,<2.0.0)",
     "fastapi (>=0.120.0,<0.121.0)",
     "uvicorn (>=0.38.0,<0.39.0)",
-    "httpx (>=0.28.1,<0.29.0)"
+    "httpx (>=0.28.1,<0.29.0)",
+    "pyyaml (>=6.0.2,<7.0.0)"
 ]
 
 
