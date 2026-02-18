@@ -685,21 +685,6 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
-name = "schedule"
-version = "1.2.2"
-description = "Job scheduling for humans."
-optional = false
-python-versions = ">=3.7"
-groups = ["main"]
-files = [
-    {file = "schedule-1.2.2-py3-none-any.whl", hash = "sha256:5bef4a2a0183abf44046ae0d164cadcac21b1db011bdd8102e4a0c1e91e06a7d"},
-    {file = "schedule-1.2.2.tar.gz", hash = "sha256:15fe9c75fe5fd9b9627f3f19cc0ef1420508f9f9a46f45cd0769ef75ede5f0b7"},
-]
-
-[package.extras]
-timezone = ["pytz"]
-
-[[package]]
 name = "sniffio"
 version = "1.3.1"
 description = "Sniff out which async library your code is running under"
@@ -797,4 +782,4 @@ standard = ["colorama (>=0.4) ; sys_platform == \"win32\"", "httptools (>=0.6.3)
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "4fe5590685f1ace6471d8aa26154d0333aa93b80746efe9fcede8f10a1f36a27"
+content-hash = "ac8628e0be15b14066203cdd44a31f63679ea4c2b74730d8662198ae469b7f7c"
