@@ -30,7 +30,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -53,7 +53,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -77,7 +77,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -100,7 +100,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -124,7 +124,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -147,7 +147,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -171,7 +171,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -194,57 +194,57 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
-        - name: "Filter_A_El-Paso"
-          payload:
-            "estimatedEquityPercentMax": 0.2
-            "hoaPresent": False
-            "mlsListingStatus": "ACTIVE,COMING_SOON"
-            "rental": False
-            "mortgageTotalPaymentMax": 1500
-            "cityId": 162654
-            "squareFeetMin": 1000
-            "squareFeetMax": 1500
-            "landUseCode": "SFR"
-            "mlsListingAmountMin": 50000
-            "bathroomsMin": 1
-            "propertyClassCode": "R"
-            "resultOffset": 1
-            "daysOnMarketMax": 300
-            "residentialPropCode": "SFR"
-            "type": None
-            "bedroomsMin": 3
-            "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
-            "selection": []
-            "selectionInversed": True
-        - name: "Filter_B_El-Paso"
-          payload:
-            "estimatedEquityPercentMax": 0.2
-            "hoaPresent": False
-            "mlsListingStatus": "ACTIVE,COMING_SOON"
-            "rental": False
-            "mortgageTotalPaymentMax": 2000
-            "cityId": 162654
-            "squareFeetMin": 1600
-            "landUseCode": "SFR"
-            "mlsListingAmountMin": 50000
-            "bathroomsMin": 2
-            "propertyClassCode": "R"
-            "resultOffset": 1
-            "daysOnMarketMax": 300
-            "residentialPropCode": "SFR"
-            "type": None
-            "bedroomsMin": 3
-            "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
-            "selection": []
-            "selectionInversed": True
+        # - name: "Filter_A_El-Paso"
+        #   payload:
+        #     "estimatedEquityPercentMax": 0.2
+        #     "hoaPresent": False
+        #     "mlsListingStatus": "ACTIVE,COMING_SOON"
+        #     "rental": False
+        #     "mortgageTotalPaymentMax": 1500
+        #     "cityId": 162654
+        #     "squareFeetMin": 1000
+        #     "squareFeetMax": 1500
+        #     "landUseCode": "SFR"
+        #     "mlsListingAmountMin": 50000
+        #     "bathroomsMin": 1
+        #     "propertyClassCode": "R"
+        #     "resultOffset": 1
+        #     "daysOnMarketMax": 300
+        #     "residentialPropCode": "SFR"
+        #     "type": None
+        #     "bedroomsMin": 3
+        #     "mlsListingAmountMax": 499000
+        #     # "estimatedValueGrowthPeriod": "ONE_MONTH"
+        #     # 'resultLimit': 13
+        #     "selection": []
+        #     "selectionInversed": True
+        # - name: "Filter_B_El-Paso"
+        #   payload:
+        #     "estimatedEquityPercentMax": 0.2
+        #     "hoaPresent": False
+        #     "mlsListingStatus": "ACTIVE,COMING_SOON"
+        #     "rental": False
+        #     "mortgageTotalPaymentMax": 2000
+        #     "cityId": 162654
+        #     "squareFeetMin": 1600
+        #     "landUseCode": "SFR"
+        #     "mlsListingAmountMin": 50000
+        #     "bathroomsMin": 2
+        #     "propertyClassCode": "R"
+        #     "resultOffset": 1
+        #     "daysOnMarketMax": 300
+        #     "residentialPropCode": "SFR"
+        #     "type": None
+        #     "bedroomsMin": 3
+        #     "mlsListingAmountMax": 499000
+        #     # "estimatedValueGrowthPeriod": "ONE_MONTH"
+        #     # 'resultLimit': 13
+        #     "selection": []
+        #     "selectionInversed": True
         - name: "Filter_A_Garden-City"
           payload:
             "estimatedEquityPercentMax": 0.2
@@ -265,7 +265,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -288,7 +288,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -312,7 +312,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -335,57 +335,57 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
-        - name: "Filter_A_Kansas-City-KS"
-          payload:
-            "estimatedEquityPercentMax": 0.2
-            "hoaPresent": False
-            "mlsListingStatus": "ACTIVE,COMING_SOON"
-            "rental": False
-            "mortgageTotalPaymentMax": 1500
-            "cityId": 61968
-            "squareFeetMin": 1000
-            "squareFeetMax": 1500
-            "landUseCode": "SFR"
-            "mlsListingAmountMin": 50000
-            "bathroomsMin": 1
-            "propertyClassCode": "R"
-            "resultOffset": 1
-            "daysOnMarketMax": 300
-            "residentialPropCode": "SFR"
-            "type": None
-            "bedroomsMin": 3
-            "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
-            "selection": []
-            "selectionInversed": True
-        - name: "Filter_B_Kansas-City-KS"
-          payload:
-            "estimatedEquityPercentMax": 0.2
-            "hoaPresent": False
-            "mlsListingStatus": "ACTIVE,COMING_SOON"
-            "rental": False
-            "mortgageTotalPaymentMax": 2000
-            "cityId": 61968
-            "squareFeetMin": 1600
-            "landUseCode": "SFR"
-            "mlsListingAmountMin": 50000
-            "bathroomsMin": 2
-            "propertyClassCode": "R"
-            "resultOffset": 1
-            "daysOnMarketMax": 300
-            "residentialPropCode": "SFR"
-            "type": None
-            "bedroomsMin": 3
-            "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
-            "selection": []
-            "selectionInversed": True
+        # - name: "Filter_A_Kansas-City-KS"
+        #   payload:
+        #     "estimatedEquityPercentMax": 0.2
+        #     "hoaPresent": False
+        #     "mlsListingStatus": "ACTIVE,COMING_SOON"
+        #     "rental": False
+        #     "mortgageTotalPaymentMax": 1500
+        #     "cityId": 61968
+        #     "squareFeetMin": 1000
+        #     "squareFeetMax": 1500
+        #     "landUseCode": "SFR"
+        #     "mlsListingAmountMin": 50000
+        #     "bathroomsMin": 1
+        #     "propertyClassCode": "R"
+        #     "resultOffset": 1
+        #     "daysOnMarketMax": 300
+        #     "residentialPropCode": "SFR"
+        #     "type": None
+        #     "bedroomsMin": 3
+        #     "mlsListingAmountMax": 499000
+        #     # "estimatedValueGrowthPeriod": "ONE_MONTH"
+        #     # 'resultLimit': 13
+        #     "selection": []
+        #     "selectionInversed": True
+        # - name: "Filter_B_Kansas-City-KS"
+        #   payload:
+        #     "estimatedEquityPercentMax": 0.2
+        #     "hoaPresent": False
+        #     "mlsListingStatus": "ACTIVE,COMING_SOON"
+        #     "rental": False
+        #     "mortgageTotalPaymentMax": 2000
+        #     "cityId": 61968
+        #     "squareFeetMin": 1600
+        #     "landUseCode": "SFR"
+        #     "mlsListingAmountMin": 50000
+        #     "bathroomsMin": 2
+        #     "propertyClassCode": "R"
+        #     "resultOffset": 1
+        #     "daysOnMarketMax": 300
+        #     "residentialPropCode": "SFR"
+        #     "type": None
+        #     "bedroomsMin": 3
+        #     "mlsListingAmountMax": 499000
+        #     # "estimatedValueGrowthPeriod": "ONE_MONTH"
+        #     # 'resultLimit': 13
+        #     "selection": []
+        #     "selectionInversed": True
         - name: "Filter_A_Kansas-City-MO"
           payload:
             "estimatedEquityPercentMax": 0.2
@@ -406,7 +406,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -429,7 +429,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -453,7 +453,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -476,7 +476,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -500,7 +500,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -523,7 +523,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -547,7 +547,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -570,7 +570,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -594,7 +594,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -617,7 +617,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -641,7 +641,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -664,7 +664,7 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            "estimatedValueGrowthPeriod": "ONE_MONTH"
+            # "estimatedValueGrowthPeriod": "ONE_MONTH"
             # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
@@ -673,57 +673,57 @@ tenants:
       inbound_webhook_url: "https://services.leadconnectorhq.com/hooks/S9g9sAgRoWUU9jp0M5Bi/webhook-trigger/bb05c8f7-6b1f-4764-833d-843e927f9f32"
       username: "bot_user"
       tags: ["Craimer_bot", "padsplit"]
-      mapping:
-        "first_name": "MLS Agent Name"
-        "last_name": "MLS Agent Name"
-        "phone_number": "MLS Agent Phone"
-        "email": "MLS Agent E-Mail"
-        "Property Address": "Address"
-        "Unit": "Unit #"
-        "Property City": "City"
-        "Property State": "State"
-        "Property Zip": "Zip"
-        "Property County": "County"
-        "APN": "APN"
-        "Owner 1 First Name": "Owner 1 First Name"
-        "Owner 1 Last Name": "Owner 1 Last Name"
-        "Owner 2 First Name": "Owner 2 First Name"
-        "Owner 2 Last Name": "Owner 2 Last Name"
-        "Mailing Address": "Mailing Address"
-        "Mailing City": "Mailing City"
-        "Property Type": "Property Type"
-        "Building Sqft": "Building Sqft"
-        "Bedrooms": "Bedrooms"
-        "Total Bathrooms": "Total Bathrooms"
-        "Bathrooms": "Bathrooms"
-        "Lot Size Sqft": "Lot Size Sqft"
-        "Year Built": "Year Built"
-        "Occupancy": "Vacant"
-        "Tax Assessed Value": "Total Assessed Value"
-        "Date of Sale": "Last Sale Date"
-        "Record Date": "Last Sale Recording Date"
-        "Buyer Name": "Last Sale Buyer Name 1"
-        "Loan 1 Balance": "Loan 1 Balance"
-        "Loan 1 Type": "Loan 1 Type"
-        "Loan 1 Rate": "Loan 1 Rate"
-        "Loan 1 Rate Type": "Loan 1 Rate Type"
-        "Loan 2 Balance": "Loan 2 Balance"
-        "Loan 2 Type": "Loan 2 Type"
-        "Loan 2 Rate": "Loan 2 Rate"
-        "Loan 2 Rate Type": "Loan 2 Rate Type"
-        "Value": "Est. Value"
-        "Is there an HOA?": "HOA Present"
-        "Loan To Value Ratio": "Est. Loan-to-Value"
-        "Condition": "Total Condition"
-        "Foreclosure Status": "Foreclosure Factor"
-        "MLS Amount": "MLS Amount"
-        "MLS Agent Name": "MLS Agent Name"
-        "MLS Agent Phone": "MLS Agent Phone"
-        "MLS Brokerage Name": "MLS Brokerage Name"
-        "MLS Brokerage Phone": "MLS Brokerage Phone"
-        "Lead Status": "Lead Status"
+    mapping:
+      "first_name": "MLS Agent Name"
+      "last_name": "MLS Agent Name"
+      "phone_number": "MLS Agent Phone"
+      "email": "MLS Agent E-Mail"
+      "Property Address": "Address"
+      "Unit": "Unit #"
+      "Property City": "City"
+      "Property State": "State"
+      "Property Zip": "Zip"
+      "Property County": "County"
+      "APN": "APN"
+      "Owner 1 First Name": "Owner 1 First Name"
+      "Owner 1 Last Name": "Owner 1 Last Name"
+      "Owner 2 First Name": "Owner 2 First Name"
+      "Owner 2 Last Name": "Owner 2 Last Name"
+      "Mailing Address": "Mailing Address"
+      "Mailing City": "Mailing City"
+      "Property Type": "Property Type"
+      "Building Sqft": "Building Sqft"
+      "Bedrooms": "Bedrooms"
+      "Total Bathrooms": "Total Bathrooms"
+      "Bathrooms": "Bathrooms"
+      "Lot Size Sqft": "Lot Size Sqft"
+      "Year Built": "Year Built"
+      "Occupancy": "Vacant"
+      "Tax Assessed Value": "Total Assessed Value"
+      "Date of Sale": "Last Sale Date"
+      "Record Date": "Last Sale Recording Date"
+      "Buyer Name": "Last Sale Buyer Name 1"
+      "Loan 1 Balance": "Loan 1 Balance"
+      "Loan 1 Type": "Loan 1 Type"
+      "Loan 1 Rate": "Loan 1 Rate"
+      "Loan 1 Rate Type": "Loan 1 Rate Type"
+      "Loan 2 Balance": "Loan 2 Balance"
+      "Loan 2 Type": "Loan 2 Type"
+      "Loan 2 Rate": "Loan 2 Rate"
+      "Loan 2 Rate Type": "Loan 2 Rate Type"
+      "Value": "Est. Value"
+      "Is there an HOA?": "HOA Present"
+      "Loan To Value Ratio": "Est. Loan-to-Value"
+      "Condition": "Total Condition"
+      "Foreclosure Status": "Foreclosure Factor"
+      "MLS Amount": "MLS Amount"
+      "MLS Agent Name": "MLS Agent Name"
+      "MLS Agent Phone": "MLS Agent Phone"
+      "MLS Brokerage Name": "MLS Brokerage Name"
+      "MLS Brokerage Phone": "MLS Brokerage Phone"
+      "Lead Status": "Lead Status"
 
-  # - id: "3f2c3a21-22d9-4c2a-ae06-9c5f7f0ad8a1"
+  # - id: "1d8086e9-eb18-40f5-b2de-9075fdf236b9"
   #   name: "Clear Sky Builder"
   #   enabled: true
   #   propstream:
@@ -734,51 +734,141 @@ tenants:
   #     list_name_prefix: "csb_equity"
   #     token_file: ".tokens/clear_sky_builder.txt"
   #     filters:
-  #       - name: "Filter_KS"
+  #       - name: "Filter_A_Wichita"
   #         payload:
-  #           estimatedEquityPercentMax: 0.3
-  #           hoaPresent: false
-  #           mlsListingStatus: "ACTIVE,COMING_SOON"
-  #           rental: false
-  #           mortgageTotalPaymentMax: 2000
-  #           cityId: 61769
-  #           fips: "20177"
-  #           squareFeetMin: 1200
-  #           landUseCode: "SFR"
-  #           mlsListingAmountMin: 60000
-  #           bathroomsMin: 1
-  #           propertyClassCode: "R"
-  #           resultOffset: 1
-  #           mlsListingDateMin: 1755043200000
-  #           residentialPropCode: "SFR"
-  #           bedroomsMin: 3
-  #           mlsListingAmountMax: 499000
-  #           estimatedValueGrowthPeriod: "ONE_MONTH"
-  #           resultLimit: 5
-  #           selection: []
-  #           selectionInversed: true
+  #           "estimatedEquityPercentMax": 0.2
+  #           "hoaPresent": False
+  #           "mlsListingStatus": "ACTIVE,COMING_SOON"
+  #           "rental": False
+  #           "mortgageTotalPaymentMax": 2000
+  #           "cityId": 61704
+  #           "squareFeetMin": 1000
+  #           "landUseCode": "SFR"
+  #           "mlsListingAmountMin": 50000
+  #           "bathroomsMin": 1
+  #           "propertyClassCode": "R"
+  #           "resultOffset": 1
+  #           "daysOnMarketMax": 300
+  #           "residentialPropCode": "SFR"
+  #           "type": None
+  #           "bedroomsMin": 3
+  #           "mlsListingAmountMax": 499000
+  #           # "estimatedValueGrowthPeriod": "ONE_MONTH"
+  #           # 'resultLimit': 13
+  #           "selection": []
+  #           "selectionInversed": True
+  #       - name: "Filter_A_Garden-City"
+  #         payload:
+  #           "estimatedEquityPercentMax": 0.2
+  #           "hoaPresent": False
+  #           "mlsListingStatus": "ACTIVE,COMING_SOON"
+  #           "rental": False
+  #           "mortgageTotalPaymentMax": 2000
+  #           "cityId": 60544
+  #           "squareFeetMin": 1000
+  #           "landUseCode": "SFR"
+  #           "mlsListingAmountMin": 50000
+  #           "bathroomsMin": 1
+  #           "propertyClassCode": "R"
+  #           "resultOffset": 1
+  #           "daysOnMarketMax": 300
+  #           "residentialPropCode": "SFR"
+  #           "type": None
+  #           "bedroomsMin": 3
+  #           "mlsListingAmountMax": 499000
+  #           # "estimatedValueGrowthPeriod": "ONE_MONTH"
+  #           # 'resultLimit': 13
+  #           "selection": []
+  #           "selectionInversed": True
+  #       - name: "Filter_A_Kansas-City-KS"
+  #         payload:
+  #           "estimatedEquityPercentMax": 0.2
+  #           "hoaPresent": False
+  #           "mlsListingStatus": "ACTIVE,COMING_SOON"
+  #           "rental": False
+  #           "mortgageTotalPaymentMax": 2000
+  #           "cityId": 61968
+  #           "squareFeetMin": 1000
+  #           "landUseCode": "SFR"
+  #           "mlsListingAmountMin": 50000
+  #           "bathroomsMin": 1
+  #           "propertyClassCode": "R"
+  #           "resultOffset": 1
+  #           "daysOnMarketMax": 300
+  #           "residentialPropCode": "SFR"
+  #           "type": None
+  #           "bedroomsMin": 3
+  #           "mlsListingAmountMax": 499000
+  #           # "estimatedValueGrowthPeriod": "ONE_MONTH"
+  #           # 'resultLimit': 13
+  #           "selection": []
+  #           "selectionInversed": True
+  #       - name: "Filter_A_Kansas-City-MO"
+  #         payload:
+  #           "estimatedEquityPercentMax": 0.2
+  #           "hoaPresent": False
+  #           "mlsListingStatus": "ACTIVE,COMING_SOON"
+  #           "rental": False
+  #           "mortgageTotalPaymentMax": 2000
+  #           "cityId": 96373
+  #           "squareFeetMin": 1000
+  #           "landUseCode": "SFR"
+  #           "mlsListingAmountMin": 50000
+  #           "bathroomsMin": 1
+  #           "propertyClassCode": "R"
+  #           "resultOffset": 1
+  #           "daysOnMarketMax": 300
+  #           "residentialPropCode": "SFR"
+  #           "type": None
+  #           "bedroomsMin": 3
+  #           "mlsListingAmountMax": 499000
+  #           # "estimatedValueGrowthPeriod": "ONE_MONTH"
+  #           # 'resultLimit': 13
+  #           "selection": []
+  #           "selectionInversed": True
   #   crm:
   #     webhook_url: "https://sms-api.craimer.com/api/v2/ghl/create_contact"
   #     inbound_webhook_url: "https://services.leadconnectorhq.com/hooks/S9g9sAgRoWUU9jp0M5Bi/webhook-trigger/bb05c8f7-6b1f-4764-833d-843e927f9f32"
   #     username: "bot_user"
-  #     tags: ["Craimer_bot", "ClearSky", "csb_equity"]
+  #     tags: ["Craimer_bot", "padsplit"]
   #     mapping:
-  #       first_name: "MLS Agent Name"
-  #       last_name: "MLS Agent Name"
-  #       phone_number: "MLS Agent Phone"
-  #       email: "MLS Agent E-Mail"
-  #       Property Address: "Address"
-  #       Property City: "City"
-  #       Property State: "State"
-  #       Property Zip: "Zip"
-  #       APN: "APN"
-  #       Property Type: "Property Type"
-  #       Bedrooms: "Bedrooms"
-  #       Bathrooms: "Total Bathrooms"
-  #       Building Sqft: "Building Sqft"
-  #       Lot Size Sqft: "Lot Size Sqft"
-  #       Year Built: "Year Built"
-  #       Is there an HOA?: "HOA Present"
+  #       "first_name": "MLS Agent Name"
+  #       "last_name": "MLS Agent Name"
+  #       "phone_number": "MLS Agent Phone"
+  #       "email": "MLS Agent E-Mail"
+  #       "Property Address": "Address"
+  #       "Property City": "City"
+  #       "Property State": "State"
+  #       "Property Zip": "Zip"
+  #       "Property County": "County"
+  #       "APN": "APN"
+  #       "Owner 1 First Name": "Owner 1 First Name"
+  #       "Owner 1 Last Name": "Owner 1 Last Name"
+  #       "Owner 2 First Name": "Owner 2 First Name"
+  #       "Owner 2 Last Name": "Owner 2 Last Name"
+  #       "Property Type": "Property Type"
+  #       "Bedrooms": "Bedrooms"
+  #       "Bathrooms": "Total Bathrooms"
+  #       "Building SqFt": "Building Sqft"
+  #       "Lot Size Sqft": "Lot Size Sqft"
+  #       "Year Built": "Year Built"
+  #       "Is there an HOA?": "HOA Present"
+  #       "Loan 1 Balance": "Loan 1 Balance"
+  #       "Loan 1 Type": "Loan 1 Type"
+  #       "Loan 1 Rate": "Loan 1 Rate"
+  #       "Loan 1 Rate Type": "Loan 1 Rate Type"
+  #       "Loan 2 Balance": "Loan 2 Balance"
+  #       "Loan 2 Type": "Loan 2 Type"
+  #       "Loan 2 Rate": "Loan 2 Rate"
+  #       "Loan 2 Rate Type": "Loan 2 Rate Type"
+  #       "Loan To Value Ratio": "Est. Loan-to-Value"
+  #       "Actual Equity Value": "Est. Equity"
+  #       "Condition": "Total Condition"
+  #       "MLS Amount": "MLS Amount"
+  #       "MLS Agent Name": "MLS Agent Name"
+  #       "MLS Agent Phone": "MLS Agent Phone"
+  #       "MLS Agent E-Mail": "MLS Agent E-Mail"
+  #       "MLS Brokerage Name": "MLS Brokerage Name"
 
   # - id: "7d2f9e01-1a5b-48c1-b4f8-33c0bb0a9f2a"
   #   name: "Regional Investor"
