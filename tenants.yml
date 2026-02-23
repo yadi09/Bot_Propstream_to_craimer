@@ -30,8 +30,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_ATLANTA"
@@ -53,8 +51,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_A_Bell-County"
@@ -77,8 +73,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_Bell-County"
@@ -100,8 +94,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_A_Dallas"
@@ -124,8 +116,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_Dallas"
@@ -147,8 +137,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_A_Fort-Worth"
@@ -171,8 +159,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_Fort-Worth"
@@ -194,57 +180,8 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
-        # - name: "Filter_A_El-Paso"
-        #   payload:
-        #     "estimatedEquityPercentMax": 0.2
-        #     "hoaPresent": False
-        #     "mlsListingStatus": "ACTIVE,COMING_SOON"
-        #     "rental": False
-        #     "mortgageTotalPaymentMax": 1500
-        #     "cityId": 162654
-        #     "squareFeetMin": 1000
-        #     "squareFeetMax": 1500
-        #     "landUseCode": "SFR"
-        #     "mlsListingAmountMin": 50000
-        #     "bathroomsMin": 1
-        #     "propertyClassCode": "R"
-        #     "resultOffset": 1
-        #     "daysOnMarketMax": 300
-        #     "residentialPropCode": "SFR"
-        #     "type": None
-        #     "bedroomsMin": 3
-        #     "mlsListingAmountMax": 499000
-        #     # "estimatedValueGrowthPeriod": "ONE_MONTH"
-        #     # 'resultLimit': 13
-        #     "selection": []
-        #     "selectionInversed": True
-        # - name: "Filter_B_El-Paso"
-        #   payload:
-        #     "estimatedEquityPercentMax": 0.2
-        #     "hoaPresent": False
-        #     "mlsListingStatus": "ACTIVE,COMING_SOON"
-        #     "rental": False
-        #     "mortgageTotalPaymentMax": 2000
-        #     "cityId": 162654
-        #     "squareFeetMin": 1600
-        #     "landUseCode": "SFR"
-        #     "mlsListingAmountMin": 50000
-        #     "bathroomsMin": 2
-        #     "propertyClassCode": "R"
-        #     "resultOffset": 1
-        #     "daysOnMarketMax": 300
-        #     "residentialPropCode": "SFR"
-        #     "type": None
-        #     "bedroomsMin": 3
-        #     "mlsListingAmountMax": 499000
-        #     # "estimatedValueGrowthPeriod": "ONE_MONTH"
-        #     # 'resultLimit': 13
-        #     "selection": []
-        #     "selectionInversed": True
         - name: "Filter_A_Garden-City"
           payload:
             "estimatedEquityPercentMax": 0.2
@@ -265,8 +202,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_Garden-City"
@@ -288,8 +223,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_A_Houston"
@@ -312,8 +245,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_Houston"
@@ -335,57 +266,8 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
-        # - name: "Filter_A_Kansas-City-KS"
-        #   payload:
-        #     "estimatedEquityPercentMax": 0.2
-        #     "hoaPresent": False
-        #     "mlsListingStatus": "ACTIVE,COMING_SOON"
-        #     "rental": False
-        #     "mortgageTotalPaymentMax": 1500
-        #     "cityId": 61968
-        #     "squareFeetMin": 1000
-        #     "squareFeetMax": 1500
-        #     "landUseCode": "SFR"
-        #     "mlsListingAmountMin": 50000
-        #     "bathroomsMin": 1
-        #     "propertyClassCode": "R"
-        #     "resultOffset": 1
-        #     "daysOnMarketMax": 300
-        #     "residentialPropCode": "SFR"
-        #     "type": None
-        #     "bedroomsMin": 3
-        #     "mlsListingAmountMax": 499000
-        #     # "estimatedValueGrowthPeriod": "ONE_MONTH"
-        #     # 'resultLimit': 13
-        #     "selection": []
-        #     "selectionInversed": True
-        # - name: "Filter_B_Kansas-City-KS"
-        #   payload:
-        #     "estimatedEquityPercentMax": 0.2
-        #     "hoaPresent": False
-        #     "mlsListingStatus": "ACTIVE,COMING_SOON"
-        #     "rental": False
-        #     "mortgageTotalPaymentMax": 2000
-        #     "cityId": 61968
-        #     "squareFeetMin": 1600
-        #     "landUseCode": "SFR"
-        #     "mlsListingAmountMin": 50000
-        #     "bathroomsMin": 2
-        #     "propertyClassCode": "R"
-        #     "resultOffset": 1
-        #     "daysOnMarketMax": 300
-        #     "residentialPropCode": "SFR"
-        #     "type": None
-        #     "bedroomsMin": 3
-        #     "mlsListingAmountMax": 499000
-        #     # "estimatedValueGrowthPeriod": "ONE_MONTH"
-        #     # 'resultLimit': 13
-        #     "selection": []
-        #     "selectionInversed": True
         - name: "Filter_A_Kansas-City-MO"
           payload:
             "estimatedEquityPercentMax": 0.2
@@ -406,8 +288,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_Kansas-City-MO"
@@ -429,8 +309,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_A_Las-Vegas"
@@ -453,8 +331,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_Las-Vegas"
@@ -476,8 +352,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_A_Maricopa-County"
@@ -500,8 +374,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_Maricopa-County"
@@ -523,8 +395,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_A_New-Orleans"
@@ -547,8 +417,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_New-Orleans"
@@ -570,8 +438,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_A_San-Antonio"
@@ -594,8 +460,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_San-Antonio"
@@ -617,8 +481,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_A_Wichita"
@@ -641,8 +503,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
         - name: "Filter_B_Wichita"
@@ -664,8 +524,6 @@ tenants:
             "type": None
             "bedroomsMin": 3
             "mlsListingAmountMax": 499000
-            # "estimatedValueGrowthPeriod": "ONE_MONTH"
-            # 'resultLimit': 13
             "selection": []
             "selectionInversed": True
     crm:

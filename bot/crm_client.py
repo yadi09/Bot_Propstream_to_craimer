@@ -1,5 +1,4 @@
 from datetime import datetime
-import json
 import requests
 from bot.config import CRM_WEBHOOK_URL
 from bot.logger import setup_logger
@@ -106,17 +105,11 @@ def send_to_crm(data, tenant):
         #     "Lead Status": "Lead Status"
         # }
 
-        crm_config = tenant.get("crm", {})
-        map_data = crm_config.get("mapping", {})
-        tags = crm_config.get("tags", [])
-        username = crm_config.get("username", DEFAULT_USERNAME)
-        webhook_url = crm_config.get("webhook_url", CRM_WEBHOOK_URL)
         tenant_id = tenant.get("id")
-
-        current_datetime = datetime.now()
-        date_tag = f"{current_datetime.strftime('%m/%d/%y')}"
-        if date_tag not in tags:
-            tags = tags + [date_tag]
+        scheduler_id = tenant.get("scheduler_id")
+        user_id = tenant.get("user_id")
+        username = tenant.get("username", DEFAULT_USERNAME)
+        webhook_url = CRM_WEBHOOK_URL
 
 
         # Clear Sky Builder Mapping playload
@@ -164,9 +157,9 @@ def send_to_crm(data, tenant):
             "new_members_file": (f"{datetime.now().strftime('%Y-%m-%d')}_padsplit_low_equity.csv", csv_file, "text/csv")
         }
         data_payload = {
-            "map_data": json.dumps(map_data),
+            "scheduler_id": scheduler_id,
+            "user_id": user_id,
             "username": username,
-            "tags": json.dumps(tags)
         }
 
         # 4️ Send POST request

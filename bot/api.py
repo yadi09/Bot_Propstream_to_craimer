@@ -4,7 +4,8 @@ import traceback
 from bot.logger import setup_logger
 import httpx
 from bot.jobs import run_tenant
-from bot.tenants import load_tenants
+from bot.db_models import SchedulerConfig
+from bot.config import LOGIN_URL, USERNAME, PASSWORD, HEADLESS, TOKEN_FILE
 
 app = FastAPI(title="PropStream Automation API", version="1.0.0")
 
@@ -84,18 +85,49 @@ async def pull_data(request: Request, background_tasks: BackgroundTasks):
 
     tenant_id = data.get("tenant_id") or data.get("tenantId")
     scheduler_id = data.get("scheduler_id") or data.get("schedulerId")
+    user_id = data.get("user_id") or data.get("userId")
+    username = data.get("username")
 
     if not tenant_id:
         raise HTTPException(status_code=400, detail="tenant_id is required")
+    if not scheduler_id:
+        raise HTTPException(status_code=400, detail="scheduler_id is required")
+    if not user_id:
+        raise HTTPException(status_code=400, detail="user_id is required")
 
-    if scheduler_id and scheduler_id != tenant_id:
-        raise HTTPException(status_code=400, detail="scheduler_id must match tenant_id")
+    config = SchedulerConfig.get_one(user_id=user_id, scheduler_id=scheduler_id)
+    if not config:
+        raise HTTPException(status_code=404, detail="Scheduler config not found")
+    else:
+        logger.info(f"Found scheduler config for tenant_id={tenant_id}, scheduler_id={scheduler_id}")
+        logger.info(f"Scheduler config details: {config.serializer()}")
 
-    tenants = load_tenants()
-    tenant = next((t for t in tenants if t.get("id") == tenant_id), None)
+    location = config.location or ""
+    location_id = location.split("#")[-1] if "#" in location else location
+    filters = config.filters or []
+    if location_id:
+        for item in filters:
+            payload = item.get("payload") if isinstance(item, dict) else None
+            if payload is None and isinstance(item, dict):
+                payload = item
+            if isinstance(payload, dict):
+                payload["cityId"] = int(location_id) if str(location_id).isdigit() else location_id
 
-    if not tenant:
-        raise HTTPException(status_code=404, detail="Tenant not found")
+    tenant = {
+        "id": tenant_id,
+        "name": config.name or tenant_id,
+        "user_id": user_id,
+        "scheduler_id": scheduler_id,
+        "username": username,
+        "propstream": {
+            "login_url": LOGIN_URL,
+            "username": USERNAME,
+            "password": PASSWORD,
+            "headless": HEADLESS,
+            "token_file": TOKEN_FILE,
+            "filters": filters,
+        },
+    }
 
     background_tasks.add_task(_run_tenant_job, tenant)
     return {
